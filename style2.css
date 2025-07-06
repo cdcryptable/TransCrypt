@@ -1,0 +1,48 @@
+/* Ce CSS est appelé lorsque la hauteur de l’écran 
+est plus petite que 530px. Seuls le logo et le nom 
+de notre projet de chiffrement sont alors affichés.*/
+
+/* Les sélecteurs sont classés par ordre alphabétique. */
+
+
+
+body{
+	overflow: hidden;
+	margin: 0px;
+}
+
+header{
+	height: 100%;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+
+
+#contenu, #nameUser{
+	display: none;
+}
+
+
+
+#bandeau{
+	margin: 0px;
+	color: white;
+	background-color: black;
+ 	font-family: papyrus;
+ 	display: flex;
+ 	align-items: center;
+ 	font-size: 35px;
+ 	padding: 40px;
+}
+
+#logo{
+	height: 250px;
+	padding: 40px;
+}

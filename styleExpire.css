@@ -1,0 +1,95 @@
+body {
+	background-color: #161616;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+article {
+	background-color: #3C3C3C;
+	padding: 15px 40px 15px 40px;
+	width: fit-content;
+	border-radius: 10px;
+	box-shadow:0px 0px 30px 0px #3F1F00;
+}
+
+/*p {                             // si on supprime l'animation, il suffit de garder ça, et de supprimer le <br> du HTML
+	text-align: center;
+	color: #E47200;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Consolas;
+	padding: 4px 0px 4px 0px;
+}*/
+
+p {
+	text-align: center;
+  	color: #E47200;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Consolas;
+  	overflow: hidden; 
+  	border-right: .15em solid orange; 
+  	white-space: nowrap; 
+  	margin: 0 auto; 
+  	letter-spacing: .15em; 
+  	animation: 
+    	typing 1.5s steps(30, end),
+    	blink-caret .8s step-end infinite;
+}
+
+@keyframes typing {
+  	from { width: 0 }
+  	to { width: 100% }
+}
+
+@keyframes blink-caret {
+  	from, to { border-color: transparent }
+  	50% { border-color: white; }
+}
+
+
+#boutonRecharge {
+	transition: 0.5s;
+	background-color: #2B2B2B;
+	text-align: center;
+	border-radius: 5px;
+	border:3px solid #B85C00;
+  	margin: 20px;
+  	padding: 10px;
+  	color: #CFCFCF;
+  	font-size: 17px;
+}
+
+div {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#boutonRecharge:hover {
+	background-color: #D34D00;
+	text-align: center;
+	border-radius: 20px;
+	border:3px solid #833000;
+  	margin: 20px;
+  	padding: 10px;
+  	color: #CFCFCF;
+  	font-size: 17px;
+  	box-shadow: 0px 0px 30px 0px #4C1C00;
+  	padding: 10px 30px 10px 30px;
+}
+
+#boutonRecharge:active {
+	transition: 0.07s;
+	background-color: #D34D00;
+	text-align: center;
+	border-radius: 25px;
+	border:3px solid #833000;
+  	margin: 20px;
+  	padding: 10px;
+  	color: white;
+  	font-size: 17px;
+  	box-shadow: 0px 0px 0px 0px black;
+}

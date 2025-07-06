@@ -1,0 +1,158 @@
+<html lang="fr">
+	<head>
+  		<meta charset="UTF-8">
+  		<title>TransCrypt</title>
+  		<link rel="stylesheet" href="style1.css" media="handheld and (orientation: landscape),screen and (min-width: 630px) and (min-height : 530px)">
+		<link rel="stylesheet" href="style2.css" media="screen and (max-height: 530px)">
+		<link rel="stylesheet" href="style3.css" media="handheld and (orientation: portrait),screen and (max-width: 630px) and (min-height : 530px)">
+	</head>
+	<body onload="initialisation()" onresize="nouvelleTaille()">
+		<header>
+			<input type="text" id="nameUser" maxlength="20" onchange="changerPseudo()">
+			<img src="logo.png" id="logo">
+			<div id="rightOfHeader">
+				<p id="bandeau">TransCrypt</p>
+				<p id="boutonHelp" onclick="help()">?</p>
+			</div>
+		</header>
+		<div id="contenu">
+			<nav id="contenuContact">
+				<nav id="typeProfile">
+					<button class="boutonStatut" id="public" onclick="public()">Public</button>
+					<button class="boutonStatut" id="prive" onclick="prive()">Privé</button>
+				</nav>
+				<p id="VotreID"></p>
+				<nav id="search">
+					<input type="number" placeholder="Id d'un utilisateur à contacter" id="idNouveauContact" onkeyup="chercherNouveauContact(event)" min="0" max="99999999">
+					<button id="boutonListeUtilisateurs" onclick="afficherListeUtilisateurs()">+</button>
+				</nav>
+				
+				
+			</nav>
+			<div id="main">
+				<div id="titre">
+					<button id="boutonRetour" onclick="changeArea()"><</button>
+					<h1 id="barreContact">Aucun contact selectionné</h1>
+				</div>
+				<div id="contenuMessage"></div>
+				<span id="envoyerMessage">
+					<p></p>
+					<textarea id="messageAEnvoyer" placeholder="Ecrivez un message..." onkeydown="maybeSend(event)" onkeyup="clean(event)" data-cible=""></textarea>
+					<button id="boutonEnvoie" onclick="boutonSend()">></button>
+				</span>
+			</div>
+		</div>
+		<div id="pageListeUtilisateurs">
+			<button class="boutonConv"onclick="afficherListeConversations()">x</button>
+			<div id="conenuRecherche">
+				<button id="boutonLeft" onclick="afficherPagePrecedente()"><</button>
+				<section>
+					<div>
+						<input type="text" placeholder="Pseudo d'un utilisateur à contacter" id="nomNouveauContact" onkeyup="chercheUser()">
+					</div>
+					
+					<table id="listeUtilisateurs">
+						
+					</table>
+					<p id="page">1/</p>
+				</section>
+				<button id="boutonRight" onclick="afficherPageSuivante()">></button>
+			</div>
+		</div>
+		<div id="pageAide">
+			<button class="boutonConv"onclick="afficherListeConversations()">x</button>
+			<h2>Bonjour, voici un rapide guide de prise en main de TransOwl</h2>
+			<div id="contenuPlanAide">
+				<ol id="aideNavigation">
+					<li><a href="#0">Personnaliser TransOwl</a></li>
+					<li><a href="#1">Ajouter un contact</a></li>
+					<li><a href="#2">Débuter une conversation</a></li>
+					<li><a href="#3">Changer son nom d’utilisateur</a></li>
+					<li><a href="#4">Profils publics, quel intérêt ?</a></li>
+					<li><a href="#5">Passer son profil en mode « privé » ou « public ».</a></li>
+					<li><a href="#6">Que se passe-t-il en cas de fermeture de la page ? Puis-je retrouver mon compte et mes conversations antérieures ?</a></li>
+					<li><a href="#7">Que se passe-t-il si je relance TransOwl en interne ? </a></li>
+					<li><a href="#8">Comment changer de thème ? </a></li>
+					<li><a href="#9">Pourquoi ce logo et ces choix esthétiques ?</a></li>
+					<li><a href="#10">En quoi TransOwl est-elle plus sécurisée que les autres applications de messagerie ?</a></li>
+					<li><a href="#11">Pourquoi TransOwl est-elle gratuite ?</a></li>
+				</ol>
+				<br><br>
+			</div>
+
+			<h3 id="0">Personnaliser TransOwl</h3>
+			<p class="classAide">Vous pouvez choisir un des thèmes suivants.</p>
+			<div id = "choixThème">
+				<img class="imageTheme" src="orange.png" onclick="orange()">
+				<img class="imageTheme" src="bleu.png" onclick="bleu()">
+				<img class="imageTheme" src="vert.png" onclick="vert()">
+				<img class="imageTheme" src="blanc.png" onclick="blanc()">
+			</div>
+
+			<h3 id="1">Ajouter un contact.</h3>
+			<p class="classAide">Entrez le nom d’utilisateur de la personne que vous voulez contacter dans la barre de recherche prévue à cet effet en haut à gauche de l’écran.</p>
+			<img src="idNouveauContact.png" class="imageHelp">
+			<p  class="classAide">Si votre contact a un profil « public », il vous est également possible de rechercher son nom parmi celui des utilisateurs publics en cliquant sur le « + » placé à droite de la barre de recherche.</p>
+			<img src="listeUtilisateurs.png" class="imageHelp">
+
+			<h3 id="2">Débuter une conversation.</h3>
+			<p class="classAide">Une fois la personne avec qui vous souhaitez discuter ajoutée dans vos contacts, vous pouvez débuter une conversation avec elle. Deux cas de figure :</p>
+			<ul>
+				<li>Vous l’avez trouvée parmi les profils dits « publics ». Alors, cliquez sur le « + » à côté de son nom d’utilisateur. Vous accéderez ainsi à votre conversation avec elle.<img src="dm.png" class="imageHelp"></li>
+				<li>Vous l’avez ajoutée à partir de son numéro d’utilisateur. Cela fait, vous accédez directement à votre conversation avec elle. Si vous avez fait d’autres manipulations entretemps, il vous est possible d’y revenir en cliquant dessus dans le menu glissant de vos contacts, à gauche.<img src="caseContact.png" class="imageHelp"></li>
+			</ul>
+			<p class="classAide">Vous pouvez maintenant écrire à cette personne en entrant un message dans la zone rectangulaire prévue à cet effet au milieu. Pour envoyer votre message, cliquez sur la flèche « > » à droite de cette zone ou appuyez simplement sur la touche « Entrée ».</p>
+			<img src="enter.png" class="imageHelp">
+
+			<h3 id="3">Changer son nom d’utilisateur.</h3>
+			<p class="classAide">Cliquez sur la zone noire dans laquelle est inscrit votre nom d’utilisateur (par défaut, il sera de la forme « User_12345678 »), supprimez les caractères que vous ne souhaitez pas conserver et écrivez votre nouveau pseudonyme.</p>
+			<img src="pseudo.png" class="imageHelp">
+
+			<h3 id="4">Profils publics, quel intérêt ?</h3>
+			<p class="classAide">Avoir un profil public permettra à tous les autres utilisateurs connectés de voir votre nom d’utilisateur dans la liste de ceux connectés en cliquant sur le « + » placé à droite de la barre de recherche. Ils pourront ainsi vous contacter plus facilement.</p>
+
+			<h3 id="5">Passer son profil en mode « privé » ou « public ».</h3>
+			<p class="classAide">Deux boutons cliquables rectangulaires respectivement nommés « Public » et « Privé » vous permettent de définir votre statut.</p>
+			<img src="statut.png" class="imageHelp">
+
+			<h3 id="6">Que se passe-t-il en cas de fermeture de la page ? Puis-je retrouver mon compte et mes conversations antérieures ?</h3>
+			<p class="classAide">Nous, équipe TransCrypt, nous sommes fait le devoir d’assurer la confidentialité des conversations de nos clients. Par conséquent, les messages envoyés et reçus ne sont pas conservés sur notre serveur, et ne sont donc pas récupérables après fermeture de la page. De manière égale, le numéro qui vous est attribué est aléatoire. En ouvrant de nouveau TransOwl, vous ne retrouverez a priori pas le même. Rassurez-vous, vos interlocuteurs ne pourront plus vous écrire après fermeture de la page. Vous ne manquerez donc aucun message !</p>
+
+			<h3 id="7">Que se passe-t-il si je relance TransOwl en interne ?</h3>
+			<p class="classAide">En relançant TransOwl, un nouveau numéro vous sera attribué et vos conversations ne seront pas sauvegardées. Néanmoins, si vous aviez laissé la fenêtre de la messagerie ouverte, vous pourrez directement vous reconnecter à TransOwl à partir de celle-ci.</p>
+
+			<h3 id="8">Comment changer de thème ?</h3>
+			<p class="classAide">Si vous souhaitez passer de notre thème orange signature à un autre de notre création - Bleu, Vert, ou encore Néon - il vous suffit de cliquer sur l’image correspondante en haut de cette aide. Le changement est automatique et vous n’avez plus qu’à retourner à vos conversations !</p>
+
+			<h3 id="9">Pourquoi ce logo et ces choix esthétiques ?</h3>
+			<p class="classAide">Chaque détail de notre messagerie est mûrement réfléchi :</p>
+			<br>
+			<b class="classAide">Le logo</b>
+			<p class="classAide">Nous avons choisi pour notre logo de représenter un hibou perché sur un Pi. Le nombre Pi avait évidemment sa place sur notre logo, TransCrypt reposant sur ses particularités. S’il a eu et a toujours différentes représentations, nous avons préféré celle se rapprochant le plus d’un perchoir pour également y mettre en avant un hibou. Le hibou a divers symboliques à travers les âges. Il est tout d’abord associé à la connaissance, ce qui est précisément le but d’une communication. Son côté “surnaturel”, sans compter sa capacité à voler, à s’élever, en ferait ensuite un représentant adéquat de la transcendance du nombre pi. Enfin, en particulier dans les récentes fictions, le hibou est considéré comme un animal messager.</p>
+			<br>
+			<b class="classAide">Les thèmes</b>
+			<p class="classAide">Nous mettons à votre disposition différents thèmes de couleur, chacun répondant à un besoin particulier – vos préférences surtout ! : Le thème Orange nébuleux est notre thème originel. Cette couleur, inspirante et dynamique, permet de singulariser notre application. Associée au noir, elle renvoie l’image d’une messagerie particulièrement sécurisée, assurant le secret de vos conversations.</p>
+			<p class="classAide">Le thème Bleu confiant a été notre seconde création. Insufflant un vent de fraîcheur, il reste pour autant rassurant, discret et symbolise la confiance. De quoi vous donner envie d’explorer toutes les possibilités de TransOwl ! </p>
+			<p class="classAide">Autre choix, le Vert revigorant. Par nature une couleur d’optimisme vous permettant de débuter d’un bon pied vos discussions, le vert représente également la valeur chère à nos yeux qu’est la défense de l’environnement.</p>
+			<p class="classAide">Finalement, le Néon exquis pour tous les curieux souhaitant apporter une onde de dynamisme dans leurs vies. Ses nombreux changements de couleur vous garantissent une distraction permanente !</p>
+
+			<h3 id="10">En quoi TransOwl est-elle plus sécurisée que les autres applications de messagerie ?</h3>
+			<p class="classAide">Contrairement à ces autres applications, assurer la confidentialité de vos conversations est notre priorité numéro 1. TransOwl se fonde sur un algorithme de chiffrement de notre cru : TransCrypt. C’est un projet novateur fini, reposant sur la propriété de transcendance du nombre pi. Par définition, les décimales de celui-ci ne sont pas périodiques ; notre chiffrement n’est donc pas basé sur du pseudo-aléatoire informatique qu’il est commun d’utiliser de nos jours, et commun d’attaquer également. Il se rapproche vraiment d’une force stochastique, c’est-à-dire réellement aléatoire. Deux clés de chiffrement aléatoires sont ainsi attribuées à chacune de vos conversations : vos messages sont chiffrés au moyen de TransCrypt et de celles-ci. Côté serveur, tout est aussi mis en œuvre pour répondre à vos attentes : vos conversations ne sont pas conservées, vous assurant donc une confidentialité optimale dans une application grand public et gratuite.</p>
+
+			<h3 id="11">Pourquoi TransOwl est-elle gratuite ?</h3>
+			<p class="classAide">La confidentialité des conversations nous paraît être un enjeu actuel majeur. Ne pas privatiser les connaissances à ce sujet nous semble donc nécessaire pour permettre à la fois l’avancée de la science et le bien-être commun. Dans cette démarche de partage, nous avons aussi décidé de rendre public le code de notre application, ce qui ne nuit en rien à sa sécurité puisque les clés distribuées sont aléatoires. N’hésitez pas à nous faire part de vos remarques et questions à <a href="mailto: equipe.transcrypt@gmail.com">cette adresse</a><br><br><br><br><br></p>
+
+			<div id="sponsor">
+				<a href="https://www.iledefrance.fr/"><img id="imgSponsor3" src="idf.png"></a>
+				<a href="https://www.louislegrand.fr/"><img id="imgSponsor4" src="logo LLG.png"></a>
+				<a href="https://talentsdunumerique.com/"><img id="imgSponsor2" src="talent.png"></a>
+				<a href="https://www.pearltrees.com/"><img id="imgSponsor1" src="perle.png"></a>
+				<a href="https://trophees-nsi.fr/"><img id="imgSponsor5" src="tropheeNSI.png"></a>
+				<a href="https://www.inria.fr/fr"><img id="imgSponsor6" src="inria.png"></a>
+			</div>
+
+			
+		</div>
+	</body>
+	<script src="main.js"></script>
+</html>

@@ -1,0 +1,477 @@
+/* Ce CSS est appelé lorsque la hauteur de l’écran
+est plus grande que 530px mais sa largeur plus petite 
+que 630px (ce format s’applique généralement aux 
+téléphones portables). Seule la liste des contacts 
+ou la discussion sélectionnée, est alors affichée.*/
+
+/* Les sélecteurs sont classés par ordre alphabétique. */ 
+
+
+
+a {
+  color: white;
+  font-size: 18;
+}
+
+body {
+  background-color: black;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+h2,h3 {
+  color: orange;
+  padding-left: 3%;
+  padding-top: 35px;
+}
+
+h2 {
+  padding-top: 0px;
+}
+
+header {
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 0px 25px 0px 25px;
+}
+
+input::placeholder {
+  color: #D6D6D6;
+}
+
+textarea::placeholder {
+  color: #D6D6D6;
+}
+
+li {
+  padding: 3px;
+  color: #CECECE;
+}
+
+section {
+  width: 100%;
+  overflow-y: auto;
+}
+
+td{
+  padding: 10px;
+}
+
+th {
+  padding: 20px;
+}
+
+
+
+
+
+
+
+.nomContact, .derniersMots {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+
+
+.caseContact {
+  color:white;
+  border-style: solid;
+  background-color: #1F1F1F;
+  border-color: #D34D00;
+  border-width: 2px 0px 2px 0px;
+  padding:0px 10px 0px 10px;
+  border-radius:7px;
+}
+
+.classAide {
+  color: #CECECE;
+  text-indent: 5%;
+  width: 90%;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.convContainers {         /* Contient une discussion avec un utilisateur. */
+  height: 100%;
+}
+
+.fromUser {               /* Message envoyé par le client. */
+  max-width: 40%;
+  padding:10px;
+  color:white;
+  background-color: #981E00;
+  word-wrap: break-word;
+  box-shadow:0px 0px 30px 0px #691500;
+  border-radius: 9px 9px 0px 9px;
+}
+
+.leftContainer {          /* Contient le message reçu d’un utilisateur. */
+  position:relative;
+  left:20px;
+  max-width:40%;
+}
+
+.messageIntro {
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #444444;
+  border-radius: 9px;
+  width: fit-content;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);;
+}
+
+.rightContainer {         /* Contient le message envoyé du client. */
+  padding-right:20px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.toUser {                 /* Message reçu d’un utilisateur. */
+  max-width: fit-content;
+  padding:10px;
+  color:white;
+  background-color: #420000;
+  word-wrap: break-word;
+  box-shadow:0px 0px 30px 0px #350000;
+  border-radius: 9px 9px 9px 0px;
+}
+
+
+
+
+
+
+#aideNavigation {
+  width: fit-content;
+  color: white;
+}
+
+#pageAide {
+  overflow-y: auto;
+  display: none;
+  color: white;
+  font-size: 18;
+  width: 50%;
+}
+
+#contenuPlanAide {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+ul {
+  width: 70%;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+ol {
+  padding: 30px 30px 30px 50px;
+  border:2px solid white;
+}
+
+#boutonHelp {
+  background-color: white;
+  border-radius: 6px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: red;
+  width: 25px;
+  text-align: center;
+}
+
+#boutonHelp:hover {
+  cursor: help;
+}
+
+#rightOfHeader {
+  display: flex;
+  align-items: center;
+}
+
+.imageHelp {
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+#choixThème{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imageTheme {
+  padding:20px;
+  width: 70%;
+}
+
+
+
+
+
+
+#bandeau {                /*Contient « TransCrypt » dans la barre noire du haut de la page. */
+  font-family: papyrus;
+  font-weight: bold;
+}
+
+#barreContact {
+  background-color: #D34D00;
+  padding: 10px 10px 10px 20px;
+  color: white;
+  margin: 0px;
+  text-overflow: ellipsis;
+}
+
+.boutonAjouterUtilisateur {
+  border-radius: 15px;
+  color: white;
+  background-color: #D34D00;
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  z-index: 10;
+}
+
+.boutonConv {
+  background-color: black;
+  color:#737373;
+  font-size: 35px;
+}
+
+#boutonEnvoie {
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  width: 35px;
+  border-radius:17px;
+  border:0px;
+  margin: 15px 30px 15px 15px;
+  background-color: #760000;
+  align-items: center;
+}
+
+#boutonLeft, #boutonRight {
+  background-color: black;
+  color:#737373;
+  font-size: 40;
+  padding:20px;
+}
+
+#boutonListeUtilisateurs {
+  border-radius: 3px;
+  color: white;
+  background-color: #9F0000;
+  border:0px;
+  margin: 5px;
+  padding: 0px;
+  width: 20%;
+  font-size: 30px;
+}
+
+#boutonRetour {
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  width: 35px;
+  border-radius:17px;
+  border:0px;
+  margin: 15px 30px 15px 15px;
+  background-color: #6D2900;
+  align-items: center;
+}
+
+.boutonStatut {
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  width: 50%;
+  border-radius:5px;
+  border:0px;
+  margin: 3px 3px 3px 3px;
+  background-color: #760000;
+  align-items: center;
+}
+
+#public {
+  opacity: 0.6;
+}
+
+#contenu {                /* Contient la liste des contacts et la discussion en cours. */
+  height: 100%; 
+  display:flex;
+  justify-content: flex-start;
+  background-color: #D34D00;
+}
+
+#contenuContact {
+  width: 100%;
+  height: 100%;
+  border:4px solid #D34D00;
+  overflow-y: scroll;
+  background-color: #D34D00;
+}
+
+#contenuMessage {
+  background-color: #111111;
+  padding: 10px;
+  border:4px solid #D34D00;
+  border-radius:8px;
+  overflow-y: scroll;
+  box-shadow:inset 0px 10px 30px 0px black;
+}
+
+#conenuRecherche {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+#envoyerMessage {         /* Contient la barre de saisie du message et le bouton d’envoie. */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #D34D00;
+  margin: 0px;
+  height: 80px;
+}
+
+#idNouveauContact {       /* Barre de recherche d’un nouveau contact. */
+  margin: 5px 0px 5px 0px;
+  border:0px;
+  border-radius:25px;
+  padding: 15px; 
+  width: 100%;
+  background-color: #7D2D00;
+  color: white;
+  font-size: 15px;
+  text-overflow: ellipsis;
+}
+
+#listeUtilisateurs {
+  padding-bottom: 50px;
+  font-size: 20px;
+  color: #B4B4B4;
+  text-align: center;
+  width: 75%;
+  max-width: 800px;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+#logo {
+  display: none;
+}
+
+#main {                   /* Contient le bouton retour, le nom du contact avec qui la discussion est en cours et la discussion. */
+  display: none;
+  width:100%;
+}
+
+#messageAEnvoyer {        /* Barre de saisie du message. */
+  resize: none;
+  margin: 15px;
+  border:0px;
+  border-radius:7px;
+  padding: 15px; 
+  width: 80%;
+  background-color: #7D2D00;
+  color: white;
+  font-size: 15px;
+}
+
+#nameUser {
+  padding: 10px 5px 10px 5px;
+  border: 0px;
+  margin: 5px;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Times New Roman";
+}
+
+#nomNouveauContact{
+  margin: 30px 0px 50px 0px;
+  border:0px;
+  border-radius:25px;
+  padding: 15px; 
+  width: 50%;
+  background-color: #CB4900;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+#page {
+  text-align: center;
+  color: #737373;
+  font-size: 18px;
+  padding-bottom: 50px;
+}
+
+#search{
+  display: flex;
+}
+
+#titre {                  /* Contient le nom du contact et le bouton retour. */
+  display: flex;
+}
+
+#typeProfile {
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+  background-color: #D34D00;
+}
+
+#VotreID {
+  font-size: 0px;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #AC0000; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9D0000; 
+}
