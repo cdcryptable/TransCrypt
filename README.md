@@ -3,4 +3,10 @@ Système de messagerie sécurisée appliquant l’algorithme de chiffrement Tran
 
 Pour plus d'informations :
 - sur le déroulé du projet et les choix effectués : lire Presentation TransCrypt.pdf
-- sur les spécificités techniques et le rendu en images : regarder Diaporama TransCrypt.pdf
+- sur les spécificités techniques, et pour lancer la messagerie : lire Documentation projet TransCrypt.pdf
+- sur le rendu en images : regarder Diaporama TransCrypt.pdf
+
+Les principaux codes sont :
+- main.js
+- user.html
+- transowl.py
