@@ -12,4 +12,4 @@ Les principaux codes sont :
 - user.html : correspond à l'interface graphique de la messagerie. Télécharger ce fichier ainsi que les images associées dans le dossier "Interface graphique" donne un premier aperçu de la messagerie.
 - transowl.py : diverses fonctions serveur
 
-Projet en équipe (Daniel Benkiewicz, Clémence Chitry, Gabriel Pesquet, Alex-Pauline Poudade), mené au printemps/été 2022.  Prix du meilleur projet de première de l’académie de Paris aux Trophées NSI 2022.
+Projet en équipe (Daniel B., Clémence C., Gabriel P., Alex-Pauline P.), mené au printemps/été 2022.  Prix du meilleur projet de première de l’académie de Paris aux Trophées NSI 2022.
